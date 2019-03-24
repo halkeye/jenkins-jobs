@@ -1,9 +1,8 @@
 folder('github_projects') {
   authorization {
     ['nfg', 'aliaoca', 'authorized', 'authenticated'].each { user ->
-      permission("Jenkins.READ", user)
-      permission("hudson.model.Item.READ", user)
-      permission("hudson.model.Item.DISCOVER", user)
+      permission("hudson.model.Item.Read", user)
+      permission("hudson.model.Item.Discover", user)
     }
   }
   displayName('Github Projects')
