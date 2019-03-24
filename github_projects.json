@@ -1,0 +1,32 @@
+{
+  "halkeye": [
+    "bamboohr-employee-stats",
+    "codacy-maven-plugin",
+    "flask_atlassian_connect",
+    "gavinmogan.com",
+    "get_groups",
+    "git-version-commits",
+    "go_windows_stats",
+    "graphite_scripts",
+    "halkeye-ansible",
+    "helm-repo-html",
+    "http_bouncer_client",
+    "http_bouncer_server",
+    "hubot-brain-redis-hash",
+    "hubot-confluence-search",
+    "hubot-jenkins-notifier",
+    "hubot-regex",
+    "hubot-sonarr",
+    "hubot-url-describer",
+    "infinicatr",
+    "minecraft.gavinmogan.com",
+    "proxy-s3-google-oauth",
+    "react-book-reader",
+    "release-dashboard",
+    "slack-foodee",
+    "soundboard",
+    "www-gavinmogan-com",
+    "discorse-docker-builder"
+  ]
+}
+
