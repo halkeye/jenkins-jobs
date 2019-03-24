@@ -1,12 +1,12 @@
-folder('github_projects') {
+folder("github_projects") {
   authorization {
-    ['nfg', 'aliaoca', 'authorized', 'authenticated'].each { user ->
+    ["nfg", "aliaoca", "authorized", "authenticated"].each { user ->
       permission("hudson.model.Item.Read", user)
       permission("hudson.model.Item.Discover", user)
     }
   }
-  displayName('Github Projects')
-  description('All the github projects')
+  displayName("Github Projects")
+  description("All the github projects")
 }
 
 
@@ -15,10 +15,10 @@ def githubProjects = new groovy.json.JsonSlurper().parse(
 )
 githubProjects.keySet().each { username ->
   githubProjects[username].each { slug ->
-    multibranchPipelineJob('github_projects/' + username + '/' + slug) {
+    multibranchPipelineJob("github_projects/" + username + "/" + slug) {
       branchSources {
         github {
-          scanCredentialsId('github-halkeye')
+          scanCredentialsId("github-halkeye")
           repoOwner(username)
           repository(slug)
         }
