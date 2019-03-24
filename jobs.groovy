@@ -16,7 +16,7 @@ def githubProjects = new groovy.json.JsonSlurper().parse(
 )
 githubProjects.keySet().each { username ->
   githubProjects[username].each { slug ->
-    multibranchPipelineJob('github_projects/' + username '/' + slug) {
+    multibranchPipelineJob('github_projects/' + username + '/' + slug) {
       branchSources {
         github {
           scanCredentialsId('github-halkeye')
