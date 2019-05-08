@@ -2,6 +2,7 @@
   "halkeye": [
     "bamboohr-employee-stats",
     "codacy-maven-plugin",
+    "discord-twitch-streamers",
     "flask_atlassian_connect",
     "gavinmogan.com",
     "get_groups",
