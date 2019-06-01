@@ -9,6 +9,7 @@
     "git-version-commits",
     "go_windows_stats",
     "graphite_scripts",
+    "graphql-server-plugin",
     "halkeye-ansible",
     "helm-repo-html",
     "http_bouncer_client",
