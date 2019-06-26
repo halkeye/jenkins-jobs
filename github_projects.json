@@ -4,6 +4,7 @@
     "codacy-maven-plugin",
     "discord-twitch-streamers",
     "flask_atlassian_connect",
+    "gatsby-source-goodreads",
     "gavinmogan.com",
     "get_groups",
     "git-version-commits",
