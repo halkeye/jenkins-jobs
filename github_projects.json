@@ -1,4 +1,7 @@
 {
+  "jenkinsci": [
+    "graphql-server-plugin"
+  ],
   "halkeye": [
     "bamboohr-employee-stats",
     "codacy-maven-plugin",
