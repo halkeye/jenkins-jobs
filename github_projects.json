@@ -23,6 +23,7 @@
     "hubot-confluence-search",
     "hubot-jenkins-notifier",
     "hubot-regex",
+    "hubot-phrases",
     "hubot-sonarr",
     "hubot-url-describer",
     "infinicatr",
