@@ -20,6 +20,7 @@
     "http_bouncer_client",
     "http_bouncer_server",
     "hubot-brain-redis-hash",
+    "hubot-devopsreactions",
     "hubot-postgres-brain",
     "hubot-pugme-reddit",
     "hubot-confluence-search",
