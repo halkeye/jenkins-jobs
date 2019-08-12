@@ -6,6 +6,7 @@
     "bamboohr-employee-stats",
     "codacy-maven-plugin",
     "discord-twitch-streamers",
+    "discorse-docker-builder",
     "eslint-formatter-multiple",
     "flask_atlassian_connect",
     "gatsby-source-goodreads",
@@ -20,14 +21,15 @@
     "http_bouncer_client",
     "http_bouncer_server",
     "hubot-brain-redis-hash",
-    "hubot-devopsreactions",
-    "hubot-postgres-brain",
-    "hubot-pugme-reddit",
     "hubot-confluence-search",
+    "hubot-devopsreactions",
     "hubot-excuse",
     "hubot-jenkins-notifier",
     "hubot-phrases",
+    "hubot-postgres-brain",
+    "hubot-pugme-reddit",
     "hubot-regex",
+    "hubot-rss-reader",
     "hubot-sonarr",
     "hubot-url-describer",
     "hubot-variables",
@@ -40,8 +42,7 @@
     "slacktalker",
     "soundboard",
     "test-danger-js",
-    "www-gavinmogan-com",
-    "discorse-docker-builder"
+    "www-gavinmogan-com"
   ]
 }
 
