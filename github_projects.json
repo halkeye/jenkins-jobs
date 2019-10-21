@@ -34,6 +34,7 @@
     "hubot-url-describer",
     "hubot-variables",
     "infinicatr",
+    "jenkins-wiki-exporter",
     "minecraft.gavinmogan.com",
     "proxy-s3-google-oauth",
     "react-book-reader",
