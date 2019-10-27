@@ -1,4 +1,7 @@
 {
+  "nodeschool": [
+    "vancouver"
+  ],
   "jenkinsci": [
     "graphql-server-plugin"
   ],
@@ -39,6 +42,7 @@
     "infinicatr",
     "jenkins-wiki-exporter",
     "minecraft.gavinmogan.com",
+    "nodeschool-vancouver-gatsby",
     "proxy-s3-google-oauth",
     "react-book-reader",
     "release-dashboard",
