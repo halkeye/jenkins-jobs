@@ -58,6 +58,7 @@ githubProjects.keySet().each { username ->
             }
             buildStrategies {
               buildRegularBranches()
+              skipInitialBuildOnFirstBranchIndexing()
               buildTags {
                 atLeastDays '-1'
                 atMostDays '3'
@@ -79,9 +80,6 @@ githubProjects.keySet().each { username ->
         traits << 'org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait' {
           typeSuffix true
           contextLabel "continuous-integration/halkeye"
-        }
-        def buildStrategies = it / buildStrategies
-          buildStrategies << 'jenkins.branch.NoTriggerBranchProperty' {
         }
       }
       orphanedItemStrategy {
@@ -109,6 +107,7 @@ bitbucketProjects.keySet().each { username ->
             }
             buildStrategies {
               buildRegularBranches()
+              skipInitialBuildOnFirstBranchIndexing()
               buildTags {
                 atLeastDays '-1'
                 atMostDays '3'
@@ -132,9 +131,6 @@ bitbucketProjects.keySet().each { username ->
           mode(ITEM)
         }
         traits << 'jenkins.branch.NoTriggerBranchProperty' {
-        }
-        def buildStrategies = it / buildStrategies
-        buildStrategies << 'jenkins.branch.NoTriggerBranchProperty' {
         }
       }
       orphanedItemStrategy {
@@ -164,33 +160,22 @@ githubOrgs.each { slug ->
         repoOwner(slug)
         traits {
           pruneStaleBranchTrait()
+          gitHubExcludeArchivedRepositories()
           gitHubBranchDiscovery {
             strategyId(3)
           }
+          gitHubPullRequestDiscovery {
+            strategyId(4)
+          } 
           gitHubTagDiscovery()
+          notificationContextTrait {
+            contextLabel("continuous-integration/halkeye")
+            typeSuffix(true)
+          } 
         }
       }
     }
     configure {
-      def traits = it / navigators / 'org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator' / traits
-      traits << 'org.jenkinsci.plugins.github_branch_source.BranchDiscoveryTrait' {
-          strategyId 3
-      }
-      traits << 'org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait' {
-          strategyId 2
-          trust(class: 'org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait$TrustPermission')
-      }
-      traits << 'org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait' {
-          strategyId 4
-      }
-      traits << 'org.jenkinsci.plugins.github__branch__source.TagDiscoveryTrait' {
-
-      }
-
-      traits << 'org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait' {
-        typeSuffix true
-        contextLabel "continuous-integration/halkeye"
-      }
       def buildStrategies = it / buildStrategies
       buildStrategies << 'jenkins.branch.buildstrategies.basic.BranchBuildStrategyImpl' {
       }
@@ -198,8 +183,5 @@ githubOrgs.each { slug ->
         atLeastMillis 1
         atMostMillis 259200000
       }
-      buildStrategies << 'jenkins.branch.NoTriggerBranchProperty' {
-      }
-    }
   }
 }
