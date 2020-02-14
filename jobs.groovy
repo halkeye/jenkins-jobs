@@ -57,11 +57,28 @@ githubProjects.keySet().each { username ->
               }
             }
             buildStrategies {
-              buildRegularBranches()
-              skipInitialBuildOnFirstBranchIndexing()
-              buildTags {
-                atLeastDays '-1'
-                atMostDays '3'
+              buildAnyBranches {
+                strategies {
+                  buildAllBranches {
+                    strategies {
+                      buildRegularBranches()
+                      skipInitialBuildOnFirstBranchIndexing()
+                    }
+                  }
+                }
+              }
+              buildAnyBranches {
+                strategies {
+                  buildAllBranches {
+                    strategies {
+                      buildTags {
+                        atLeastDays '-1'
+                        atMostDays '3'
+                      }
+                      skipInitialBuildOnFirstBranchIndexing()
+                    }
+                  }
+                }
               }
             }
           }
@@ -106,11 +123,28 @@ bitbucketProjects.keySet().each { username ->
               }
             }
             buildStrategies {
-              buildRegularBranches()
-              skipInitialBuildOnFirstBranchIndexing()
-              buildTags {
-                atLeastDays '-1'
-                atMostDays '3'
+              buildAnyBranches {
+                strategies {
+                  buildAllBranches {
+                    strategies {
+                      buildRegularBranches()
+                      skipInitialBuildOnFirstBranchIndexing()
+                    }
+                  }
+                }
+              }
+              buildAnyBranches {
+                strategies {
+                  buildAllBranches {
+                    strategies {
+                      buildTags {
+                        atLeastDays '-1'
+                        atMostDays '3'
+                      }
+                      skipInitialBuildOnFirstBranchIndexing()
+                    }
+                  }
+                }
               }
             }
           }
@@ -129,8 +163,6 @@ bitbucketProjects.keySet().each { username ->
         }
         traits << 'com.cloudbees.jenkins.plugins.bitbucket.WebhookRegistrationTrait' {
           mode(ITEM)
-        }
-        traits << 'jenkins.branch.NoTriggerBranchProperty' {
         }
       }
       orphanedItemStrategy {
@@ -173,15 +205,6 @@ githubOrgs.each { slug ->
             typeSuffix(true)
           } 
         }
-      }
-    }
-    configure {
-      def buildStrategies = it / buildStrategies
-      buildStrategies << 'jenkins.branch.buildstrategies.basic.BranchBuildStrategyImpl' {
-      }
-      buildStrategies << 'jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl' {
-        atLeastMillis 1
-        atMostMillis 259200000
       }
     }
   }
