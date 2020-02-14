@@ -11,7 +11,7 @@ def githubOrgs = !enabled ? new groovy.json.JsonSlurper().parseText("[]") : new 
 
 folder("github_projects") {
   authorization {
-    ["nfg", "aliaoca", "authorized", "authenticated"].each { user ->
+    ["nfg", "aliaoca", "anonymous", "authorized", "authenticated"].each { user ->
       permission("hudson.model.Item.Read", user)
       permission("hudson.model.Item.Discover", user)
     }
@@ -22,7 +22,7 @@ folder("github_projects") {
 
 folder("github_orgs") {
   authorization {
-    ["nfg", "aliaoca", "authorized", "authenticated"].each { user ->
+    ["nfg", "aliaoca", "anonymous", "authorized", "authenticated"].each { user ->
       permission("hudson.model.Item.Read", user)
       permission("hudson.model.Item.Discover", user)
     }
