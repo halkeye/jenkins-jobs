@@ -176,6 +176,31 @@ bitbucketProjects.keySet().each { username ->
 
 githubOrgs.each { slug ->
   organizationFolder("github_orgs/" + slug) {
+    buildStrategies {
+      buildAnyBranches {
+        strategies {
+          buildAllBranches {
+            strategies {
+              buildRegularBranches()
+              skipInitialBuildOnFirstBranchIndexing()
+            }
+          }
+        }
+      }
+      buildAnyBranches {
+        strategies {
+          buildAllBranches {
+            strategies {
+              buildTags {
+                atLeastDays '-1'
+                atMostDays '3'
+              }
+              skipInitialBuildOnFirstBranchIndexing()
+            }
+          }
+        }
+      }
+    }
     orphanedItemStrategy {
       defaultOrphanedItemStrategy {
         pruneDeadBranches(true)
