@@ -1,4 +1,4 @@
-def enabled = false;
+def enabled = true;
 def githubProjects = !enabled ? new groovy.json.JsonSlurper().parseText("{}") : new groovy.json.JsonSlurper().parse(
   (new URL("https://raw.githubusercontent.com/halkeye/jenkins-jobs/master/github_projects.json")).newReader()
 );
