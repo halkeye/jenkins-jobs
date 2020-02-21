@@ -62,7 +62,7 @@ githubProjects.keySet().each { username ->
                   buildAllBranches {
                     strategies {
                       buildRegularBranches()
-                      skipInitialBuildOnFirstBranchIndexing()
+                      // skipInitialBuildOnFirstBranchIndexing()
                     }
                   }
                 }
@@ -75,7 +75,7 @@ githubProjects.keySet().each { username ->
                         atLeastDays '-1'
                         atMostDays '3'
                       }
-                      skipInitialBuildOnFirstBranchIndexing()
+                      // skipInitialBuildOnFirstBranchIndexing()
                     }
                   }
                 }
@@ -128,7 +128,7 @@ bitbucketProjects.keySet().each { username ->
                   buildAllBranches {
                     strategies {
                       buildRegularBranches()
-                      skipInitialBuildOnFirstBranchIndexing()
+                      // skipInitialBuildOnFirstBranchIndexing()
                     }
                   }
                 }
@@ -141,7 +141,7 @@ bitbucketProjects.keySet().each { username ->
                         atLeastDays '-1'
                         atMostDays '3'
                       }
-                      skipInitialBuildOnFirstBranchIndexing()
+                      // skipInitialBuildOnFirstBranchIndexing()
                     }
                   }
                 }
@@ -182,7 +182,7 @@ githubOrgs.each { slug ->
           buildAllBranches {
             strategies {
               buildRegularBranches()
-              skipInitialBuildOnFirstBranchIndexing()
+              // skipInitialBuildOnFirstBranchIndexing()
             }
           }
         }
@@ -195,7 +195,7 @@ githubOrgs.each { slug ->
                 atLeastDays '-1'
                 atMostDays '3'
               }
-              skipInitialBuildOnFirstBranchIndexing()
+              // skipInitialBuildOnFirstBranchIndexing()
             }
           }
         }
