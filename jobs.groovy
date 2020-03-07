@@ -28,6 +28,11 @@ folder("bitbucket_projects") {
 githubProjects.keySet().each { username ->
   githubProjects[username].each { slug ->
     multibranchPipelineJob("github_projects/" + username + "_" + slug) {
+      triggers {
+        periodicFolderTrigger {
+          interval(1440)
+        }
+      }
       branchSources {
         branchSource {
           source {
@@ -100,6 +105,11 @@ githubProjects.keySet().each { username ->
 bitbucketProjects.keySet().each { username ->
   bitbucketProjects[username].each { slug ->
     multibranchPipelineJob("bitbucket_projects/" + username + "_" + slug) {
+      triggers {
+        periodicFolderTrigger {
+          interval(1440)
+        }
+      }
       branchSources {
         branchSource {
           source {
