@@ -20,17 +20,6 @@ folder("github_projects") {
   description("All the github projects")
 }
 
-folder("github_orgs") {
-  authorization {
-    ["nfg", "aliaoca", "anonymous", "authorized", "authenticated"].each { user ->
-      permission("hudson.model.Item.Read", user)
-      permission("hudson.model.Item.Discover", user)
-    }
-  }
-  displayName("Github Organization Projects")
-  description("")
-}
-
 folder("bitbucket_projects") {
   displayName("Bitbucket Projects")
   description("All the bitbucket projects")
@@ -175,7 +164,7 @@ bitbucketProjects.keySet().each { username ->
 }
 
 githubOrgs.each { slug ->
-  organizationFolder("github_orgs/" + slug) {
+  organizationFolder(slug) {
     buildStrategies {
       buildAnyBranches {
         strategies {
