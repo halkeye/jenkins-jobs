@@ -30,7 +30,7 @@ githubProjects.keySet().each { username ->
     multibranchPipelineJob("github_projects/" + username + "_" + slug) {
       triggers {
         periodicFolderTrigger {
-          interval(1440)
+          interval("86400000")
         }
       }
       branchSources {
@@ -107,7 +107,7 @@ bitbucketProjects.keySet().each { username ->
     multibranchPipelineJob("bitbucket_projects/" + username + "_" + slug) {
       triggers {
         periodicFolderTrigger {
-          interval(1440)
+          interval("86400000")
         }
       }
       branchSources {
