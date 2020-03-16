@@ -5,7 +5,7 @@ def githubProjects = !enabled ? new groovy.json.JsonSlurper().parseText("{}") : 
 def bitbucketProjects = !enabled ? new groovy.json.JsonSlurper().parseText("{}") : new groovy.json.JsonSlurper().parse(
   (new URL("https://raw.githubusercontent.com/halkeye/jenkins-jobs/master/bitbucket_projects.json")).newReader()
 );
-def githubOrgs = !enabled ? new groovy.json.JsonSlurper().parseText("{} : new groovy.json.JsonSlurper().parse(
+def githubOrgs = !enabled ? new groovy.json.JsonSlurper().parseText("{}") : new groovy.json.JsonSlurper().parse(
   (new URL("https://raw.githubusercontent.com/halkeye/jenkins-jobs/master/github_orgs.json")).newReader()
 );
 
