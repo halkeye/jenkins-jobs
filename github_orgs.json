@@ -1,4 +1,8 @@
-[
-  "halkeye-helm-charts",
-  "halkeye-docker"
-]
+{
+  "halkeye-helm-charts": {
+    "public": true
+  },
+  "halkeye-docker": {
+    "public": true
+  }
+}

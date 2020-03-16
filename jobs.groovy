@@ -5,7 +5,7 @@ def githubProjects = !enabled ? new groovy.json.JsonSlurper().parseText("{}") : 
 def bitbucketProjects = !enabled ? new groovy.json.JsonSlurper().parseText("{}") : new groovy.json.JsonSlurper().parse(
   (new URL("https://raw.githubusercontent.com/halkeye/jenkins-jobs/master/bitbucket_projects.json")).newReader()
 );
-def githubOrgs = !enabled ? new groovy.json.JsonSlurper().parseText("[]") : new groovy.json.JsonSlurper().parse(
+def githubOrgs = !enabled ? new groovy.json.JsonSlurper().parseText("{} : new groovy.json.JsonSlurper().parse(
   (new URL("https://raw.githubusercontent.com/halkeye/jenkins-jobs/master/github_orgs.json")).newReader()
 );
 
@@ -173,8 +173,22 @@ bitbucketProjects.keySet().each { username ->
   }
 }
 
-githubOrgs.each { slug ->
+githubOrgs.keySet().each { slug ->
   organizationFolder(slug) {
+    authorization {
+      if (githubOrgs[slug]["public"]) {
+        ["anonymous", "authorized", "authenticated"].each { user ->
+          permission("hudson.model.Item.Read", user)
+          permission("hudson.model.Item.Discover", user)
+        }
+      }
+      if (githubOrgs[slug]["allowed_read_users"]) {
+        githubOrgs[slug]["allowed_read_users"].each { user ->
+          permission("hudson.model.Item.Read", user)
+          permission("hudson.model.Item.Discover", user)
+        }
+      }
+    }
     buildStrategies {
       buildAnyBranches {
         strategies {
