@@ -15,6 +15,7 @@
     "discorse-docker-builder",
     "eslint-formatter-multiple",
     "flask_atlassian_connect",
+    "GamesDealsBot",
     "gatsby-source-goodreads",
     "gatsby-theme-nodeschool",
     "get_groups",
@@ -49,7 +50,6 @@
     "slack-foodee",
     "slacktalker",
     "soundboard",
-    "test-danger-js",
     "www-gavinmogan-com"
   ]
 }
