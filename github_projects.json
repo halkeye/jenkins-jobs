@@ -5,9 +5,6 @@
   "jenkinsci": [
     "graphql-server-plugin"
   ],
-  "jenkins-infra": [
-    "jenkins-wiki-exporter"
-  ],
   "halkeye": [
     "bamboohr-employee-stats",
     "codacy-maven-plugin",
