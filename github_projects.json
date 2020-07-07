@@ -23,6 +23,7 @@
     "helm-repo-html",
     "http_bouncer_client",
     "http_bouncer_server",
+    "hubot-brain-import",
     "hubot-brain-redis-hash",
     "hubot-confluence-search",
     "hubot-devopsreactions",
