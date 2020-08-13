@@ -37,7 +37,7 @@ githubProjects.keySet().each { username ->
         branchSource {
           source {
             github {
-              credentialsId("github-halkeye")
+              credentialsId("github-app")
               configuredByUrl true
               repositoryUrl "https://github.com/" + username + "/" + slug
               repoOwner(username)
@@ -226,7 +226,7 @@ githubOrgs.keySet().each { slug ->
     }
     organizations {
       github {
-        credentialsId("github-halkeye")
+        credentialsId("github-app")
         repoOwner(slug)
         traits {
           pruneStaleBranchTrait()
