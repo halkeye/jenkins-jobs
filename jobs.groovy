@@ -9,6 +9,8 @@ def githubOrgs = !enabled ? new groovy.json.JsonSlurper().parseText("{}") : new 
   (new URL("https://raw.githubusercontent.com/halkeye/jenkins-jobs/master/github_orgs.json")).newReader()
 );
 
+def appEnabledAccounts = ["halkeye", "halkeye-helm-charts", "halkeye-docker"]
+
 folder("github_projects") {
   authorization {
     ["nfg", "aliaoca", "anonymous", "authorized", "authenticated"].each { user ->
@@ -37,7 +39,7 @@ githubProjects.keySet().each { username ->
         branchSource {
           source {
             github {
-              credentialsId("github-app")
+              credentialsId(appEnabledAccounts.contains(username) ? "github-app-" + username : "github-halkeye")
               configuredByUrl true
               repositoryUrl "https://github.com/" + username + "/" + slug
               repoOwner(username)
@@ -226,7 +228,7 @@ githubOrgs.keySet().each { slug ->
     }
     organizations {
       github {
-        credentialsId("github-app")
+        credentialsId(appEnabledAccounts.contains(slug) ? "github-app-" + slug : "github-halkeye")
         repoOwner(slug)
         traits {
           pruneStaleBranchTrait()
