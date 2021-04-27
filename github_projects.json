@@ -2,9 +2,6 @@
   "nodeschool": [
     "vancouver"
   ],
-  "jenkinsci": [
-    "graphql-server-plugin"
-  ],
   "halkeye": [
     "bamboohr-employee-stats",
     "codacy-maven-plugin",
@@ -41,7 +38,7 @@
     "infinicatr",
     "kubernetes-usb-labeler",
     "language-versions",
-    "markdown-formatter",
+    "mastodon-twitter-poster",
     "minecraft.gavinmogan.com",
     "proxy-s3-google-oauth",
     "react-book-reader",
@@ -50,7 +47,6 @@
     "slack-foodee",
     "slacktalker",
     "soundboard",
-    "www-gavinmogan-com"
-  ]
+    "www-gavinmogan-com"  ]
 }
 
