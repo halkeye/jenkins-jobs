@@ -35,6 +35,7 @@
     "hubot-sonarr",
     "hubot-url-describer",
     "hubot-variables",
+    "hubot-xkcd",
     "infinicatr",
     "kubernetes-usb-labeler",
     "language-versions",
