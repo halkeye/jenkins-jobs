@@ -10,6 +10,7 @@
     "eslint-formatter-multiple",
     "flask_atlassian_connect",
     "GamesDealsBot",
+    "gatsby-jenkins-io",
     "gatsby-source-goodreads",
     "gatsby-theme-nodeschool",
     "get_groups",
@@ -34,6 +35,6 @@
     "slack-foodee",
     "slacktalker",
     "soundboard",
-    "www-gavinmogan-com"  ]
+    "www-gavinmogan-com"
+  ]
 }
-
